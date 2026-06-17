@@ -32,3 +32,6 @@ This project includes a simple product catalog with category filters, a cart pan
 - The project is static and requires only a browser.
 - Product data is stored in `app.js`.
 - Feedback is handled locally in the page session.
+
+## Hosting
+our site is live at https://shrutisah9827.github.io/Vegetable-Mart-2024-/
