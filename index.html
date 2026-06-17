@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Fresh Market</p>
+          <h1>Farm-fresh grocery with a cart that feels effortless.</h1>
+          <p class="subtitle"></p>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" type="button" id="wishlistBtn" aria-label="Feedback shortcut">
+            <span>✦</span>
+          </button>
+          <button class="cart-button" type="button" id="openCartBtn">
+            <span>Cart</span>
+            <strong id="cartCount">0</strong>
+          </button>
+        </div>
+      </header>
+
+      <section class="hero-strip">
+        <div class="hero-card">
+          <span>Fast pickup</span>
+          <strong>Same day delivery</strong>
+        </div>
+        <div class="hero-card">
+          <span>Fresh stock</span>
+          <strong>Picked every morning</strong>
+        </div>
+        <div class="hero-card">
+          <span>Feedback</span>
+          <strong>Rate after use</strong>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Product categories">
+        <button class="tab active" type="button" data-filter="all">All type</button>
+        <button class="tab" type="button" data-filter="vegetable">Vegetable</button>
+        <button class="tab" type="button" data-filter="leafy-green">Leafy Green</button>
+        <button class="tab" type="button" data-filter="fruits">Fruits</button>
+        <button class="tab" type="button" data-filter="non-veg">Non-Veg</button>
+      </nav>
+
+      <main class="content-grid">
+        <section class="catalog">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Browse products</p>
+              <h2 id="catalogTitle">All products</h2>
+            </div>
+            <p class="section-note">Tap a tab to filter the live catalog.</p>
+          </div>
+          <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+          <div class="cart-panel-header">
+            <div>
+              <p class="section-label">Your cart</p>
+              <h2>Ready to checkout</h2>
+            </div>
+            <button class="ghost-button" type="button" id="closeCartBtn">Close</button>
+          </div>
+
+          <div class="cart-list" id="cartList"></div>
+
+          <div class="cart-summary">
+            <div class="summary-row">
+              <span>Items</span>
+              <strong id="itemTotal">0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Total</span>
+              <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="checkout-button" type="button" id="checkoutBtn">Buy now</button>
+          </div>
+        </aside>
+      </main>
+
+      <section class="feedback-panel" id="feedbackPanel">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Post-purchase feedback</p>
+            <h2>Tell us how the item worked after you used it.</h2>
+          </div>
+          <p class="section-note">Feedback stays local in your browser.</p>
+        </div>
+        <div class="feedback-layout">
+          <form class="feedback-form" id="feedbackForm">
+            <label>
+              Purchased item
+              <select id="feedbackItem"></select>
+            </label>
+            <label>
+              Rating
+              <div class="rating-row" id="ratingRow"></div>
+            </label>
+            <label>
+              Review
+              <textarea id="feedbackText" rows="4" placeholder="How did it taste, cook, or perform after use?"></textarea>
+            </label>
+            <button class="checkout-button" type="submit">Save feedback</button>
+          </form>
+          <div class="review-stack" id="reviewStack"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="backdrop" id="backdrop" hidden></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
